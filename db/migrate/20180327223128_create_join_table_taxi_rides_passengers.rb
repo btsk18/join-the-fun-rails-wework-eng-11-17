@@ -1,5 +1,7 @@
 class CreateJoinTableTaxiRidesPassengers < ActiveRecord::Migration
   def change
-    create_join_table :rides, :taxis, :passengers
+    change_table :rides do |t|
+      t.integer :passenger_id
+      t.integer :taxi_id
   end
 end
